@@ -1,0 +1,22 @@
+{
+    "SUBTITLE": "*barnacle exists*",
+    "NAME": "barnacle",
+    "PATH": [
+        [
+            "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\creatures\\barnacle\\barnacle_bark2.wav",
+            1
+        ],
+        [
+            "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\creatures\\barnacle\\barnacle_tongue_pull1.wav",
+            4,
+            0,
+            1
+        ],
+        [
+            "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\creatures\\barnacle\\barnacle_crunch3.wav",
+            4,
+            0,
+            3
+        ]
+    ]
+}

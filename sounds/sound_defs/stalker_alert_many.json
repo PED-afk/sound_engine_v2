@@ -1,0 +1,24 @@
+{
+    "SUBTITLE": "*Many stalker screams*",
+    "NAME": "stalker_alert_many",
+    "PATH": [
+        [
+            "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\stalker_scream3.wav",
+            3,
+            2,
+            1
+        ],
+        [
+            "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\stalker_scream4.wav",
+            0,
+            2,
+            1
+        ],
+        [
+            "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\stalker_scream4.wav",
+            3,
+            1,
+            0
+        ]
+    ]
+}

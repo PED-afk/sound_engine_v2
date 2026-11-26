@@ -1,0 +1,13 @@
+{
+    "SUBTITLE": "*Train horn and wheels close*",
+    "NAME": "train_horn_close_wheel",
+    "PATH": [
+        "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\train_horn2.wav",
+        [
+            "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\train_wheels_loop1.wav",
+            1,
+            0,
+            2
+        ]
+    ]
+}

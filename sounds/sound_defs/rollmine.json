@@ -1,0 +1,12 @@
+{
+    "SUBTITLE": "*Rollmine rolls*",
+    "NAME": "rollmine",
+    "PATH": [
+        "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\rmine_moveslow_loop1.wav",
+        [
+            "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\rmine_blip1.wav",
+            4,
+            1
+        ]
+    ]
+}

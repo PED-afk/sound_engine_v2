@@ -1,0 +1,30 @@
+{
+    "SUBTITLE": "*Turret sees target*",
+    "NAME": "turret_alert",
+    "PATH": [
+        [
+            "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\alert.wav",
+            1,
+            0,
+            0
+        ],
+        [
+            "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\alert.wav",
+            1,
+            0,
+            0.2
+        ],
+        [
+            "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\alert.wav",
+            1,
+            0,
+            0.4
+        ],
+        [
+            "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\alert.wav",
+            1,
+            0,
+            0.6
+        ]
+    ]
+}

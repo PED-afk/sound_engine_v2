@@ -1,0 +1,16 @@
+{
+    "SUBTITLE": "*Rail-crossing bell*",
+    "NAME": "train_bell",
+    "PATH": [
+        [
+            "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\train_crossing_bell_loop1.wav",
+            3
+        ],
+        [
+            "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\train_crossing_bell_loop1.wav",
+            3,
+            0,
+            0.5
+        ]
+    ]
+}

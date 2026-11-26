@@ -1,0 +1,13 @@
+{
+    "SUBTITLE": "*Turret scanning*",
+    "NAME": "turret_scan",
+    "PATH": [
+        "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\deploy.wav",
+        [
+            "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\retract.wav",
+            1,
+            0,
+            0.6
+        ]
+    ]
+}

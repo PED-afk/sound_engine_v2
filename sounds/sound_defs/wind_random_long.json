@@ -1,0 +1,24 @@
+{
+    "SUBTITLE": "*wind*",
+    "NAME": "wind_random_long",
+    "PATH": [
+        [
+            "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\ambiance\\wind\\wind_snippet1.wav",
+            1,
+            0,
+            0
+        ],
+        [
+            "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\ambiance\\wind\\wind_snippet3.wav",
+            1,
+            0,
+            28
+        ],
+        [
+            "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\ambiance\\wind\\wind_snippet4.wav",
+            1,
+            0,
+            53
+        ]
+    ]
+}

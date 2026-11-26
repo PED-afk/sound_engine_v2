@@ -1,0 +1,73 @@
+{
+    "SUBTITLE": "zero, eight; two, zero; one, seven; one, nine",
+    "KEEP": 1,
+    "NAME": "number_sequence_1",
+    "PATH": [
+        [
+            "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\eng\\combine_radio\\overw\\numbers\\zero.wav",
+            1,
+            0,
+            0.0
+        ],
+        [
+            "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\eng\\combine_radio\\overw\\numbers\\eight.wav",
+            1,
+            0,
+            0.9
+        ],
+        [
+            "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\eng\\combine_radio\\overw\\numbers\\_comma.wav",
+            1,
+            0,
+            1.8
+        ],
+        [
+            "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\eng\\combine_radio\\overw\\numbers\\two.wav",
+            1,
+            0,
+            2.7
+        ],
+        [
+            "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\eng\\combine_radio\\overw\\numbers\\zero.wav",
+            1,
+            0,
+            3.6
+        ],
+        [
+            "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\eng\\combine_radio\\overw\\numbers\\_comma.wav",
+            1,
+            0,
+            4.5
+        ],
+        [
+            "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\eng\\combine_radio\\overw\\numbers\\one.wav",
+            1,
+            0,
+            5.4
+        ],
+        [
+            "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\eng\\combine_radio\\overw\\numbers\\seven.wav",
+            1,
+            0,
+            6.3
+        ],
+        [
+            "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\eng\\combine_radio\\overw\\numbers\\_comma.wav",
+            1,
+            0,
+            7.2
+        ],
+        [
+            "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\eng\\combine_radio\\overw\\numbers\\one.wav",
+            1,
+            0,
+            8.1
+        ],
+        [
+            "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\eng\\combine_radio\\overw\\numbers\\nine.wav",
+            1,
+            0,
+            9.0
+        ]
+    ]
+}

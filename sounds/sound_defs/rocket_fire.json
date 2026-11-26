@@ -1,0 +1,13 @@
+{
+    "SUBTITLE": "*Rocket fired and flies*",
+    "NAME": "rocket_fire",
+    "PATH": [
+        "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\rocketfire1.wav",
+        [
+            "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\rocket1.wav",
+            1,
+            0,
+            0.5
+        ]
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "NAME": "buttons",
+    "SUBTITLE": "buttons",
+    "PATH": [
+        [
+            "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\UI\\beep.wav",
+            4,
+            1,
+            0.1
+        ],
+        [
+            "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\UI\\beep.wav",
+            5,
+            0,
+            0
+        ]
+    ]
+}

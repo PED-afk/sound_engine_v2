@@ -1,0 +1,16 @@
+{
+    "SUBTITLE": "*Dropship close*",
+    "NAME": "dropship_near",
+    "PATH": [
+        [
+            "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\dropship_engine_near_loop1.wav",
+            2
+        ],
+        [
+            "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\dropship_engine_near_loop1.wav",
+            2,
+            0,
+            2
+        ]
+    ]
+}

@@ -1,0 +1,12 @@
+{
+    "SUBTITLE": "*Hunter walks*",
+    "NAME": "hunter_walk",
+    "PATH": [
+        [
+            "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\ministrider_footstep5.wav",
+            6,
+            0,
+            0
+        ]
+    ]
+}

@@ -1,0 +1,48 @@
+{
+    "SUBTITLE": "Welcome. Welcome to City 17.\nYou have chosen, or been chosen, to relocate to one of our finest remaining urban centers.\nI thought so much of City 17 that I elected to establish my Administration here,\nin the Citadel so thoughtfully provided by Our Benefactors.\nI have been proud to call City 17 my home. And so, whether you are here to stay, or passing through on your way to parts unknown,\nwelcome to City 17.\nIt's safer here.",
+    "NAME": "welcome_all",
+    "PATH": [
+        [
+            "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\eng\\characters\\breen\\br_welcome01.wav",
+            1,
+            0,
+            0
+        ],
+        [
+            "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\eng\\characters\\breen\\br_welcome02.wav",
+            1,
+            0,
+            5
+        ],
+        [
+            "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\eng\\characters\\breen\\br_welcome03.wav",
+            1,
+            0,
+            12
+        ],
+        [
+            "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\eng\\characters\\breen\\br_welcome04.wav",
+            1,
+            0,
+            20
+        ],
+        [
+            "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\eng\\characters\\breen\\br_welcome05.wav",
+            1,
+            0,
+            25
+        ],
+        [
+            "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\eng\\characters\\breen\\br_welcome06.wav",
+            1,
+            0,
+            36
+        ],
+        [
+            "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\eng\\characters\\breen\\br_welcome07.wav",
+            1,
+            0,
+            39.5
+        ]
+    ]
+}

@@ -1,0 +1,11 @@
+{
+    "SUBTITLE": "*Manhack flies*",
+    "NAME": "manhack",
+    "PATH": [
+        "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\mh_engine_loop1.wav",
+        [
+            "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\mh_blade_loop1.wav",
+            5
+        ]
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "SUBTITLE": "*Hunter runs*",
+    "NAME": "hunter_run",
+    "PATH": [
+        [
+            "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\ministrider_footstep5.wav",
+            8,
+            0,
+            0
+        ],
+        [
+            "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\ministrider_footstep5.wav",
+            8,
+            0,
+            0.5
+        ],
+        [
+            "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\ministrider_footstep2.wav",
+            1,
+            0,
+            4.75
+        ]
+    ]
+}

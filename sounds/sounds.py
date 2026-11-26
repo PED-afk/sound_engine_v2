@@ -3,9 +3,9 @@
 import random
 import json
 
-from encoder import encode, decode
 from subts import get_subt_lang
 from save_data import save_json
+from encoder import encode
 
 def load_json(filePath:str):
     if filePath.endswith(".json"):
@@ -95,20 +95,20 @@ def loadSoundFromFile(folderPath,folderUNI,filePathLoad):
 
 
 
-def load_sounds(lang,rootPath,returnq=False):
+def load_sounds(lang,rootPath:str,returnq=False):
     lang=lang.upper()
     languages={
-        "ENG":f"{rootPath}halflife2sounds\\sounds\\eng\\",
-        "HUN":f"{rootPath}halflife2sounds\\sounds\\hun\\"
-        }
+        "ENG":f"{rootPath}\\eng\\",
+        "HUN":f"{rootPath}\\hun\\"
+    }
     numberNamesLang={
         "ENG":["zero","one","two","three","four","five","six","seven","eight","nine"],
         "HUN":["nulla","egy","kettő","három","négy","öt","hat","hét","nyolc","kilenc"]
     }
-    folderPathUNI=f"{rootPath}halflife2sounds\\sounds\\UNI\\"
+    folderPathUNI=f"{rootPath}\\UNI\\"
 
-    filePathEncode=f"{rootPath}halflife2sounds\\data\\ignore_in_check\\encode.txt"
-    filePathLoad=f"{rootPath}halflife2sounds\\data\\subt_sound_load.json"
+    filePathEncode=f"{rootPath.removesuffix("\\sounds")}data\\ignore_in_check\\encode.txt"
+    filePathLoad=f"{rootPath.removesuffix("\\sounds")}data\\subt_sound_load.json"
 
     if lang in languages:
         folderPath=languages[lang]
@@ -250,12 +250,20 @@ def load_sounds(lang,rootPath,returnq=False):
 
 
         {"SUBTITLE":"*water dripps*","NAME":"drip_echo","PATH":f"{folderPathUNI}ambiance\\water\\corridor_water.wav"},
-        {"SUBTITLE":"*water splashes*","NAME":"drip_echo","PATH":f"{folderPathUNI}ambiance\\water\\water_splash{random.randint(1,3)}.wav"},
+        {"SUBTITLE":"*water splashes*","NAME":"water_splash","PATH":f"{folderPathUNI}ambiance\\water\\water_splash{random.randint(1,3)}.wav"},
         {"SUBTITLE":"*wave crashes*","NAME":"waves","PATH":f"{folderPathUNI}ambiance\\water\\wave\\"},
         #"filepath",play,wait,wait before
     ]
-    
+
     loadSoundFromFile(folderPath,folderPathUNI,filePathLoad)
+    names=[]
+    for sdict in subt_sounds:
+        if sdict["NAME"] in names:
+            print(f"Name exists: {sdict["NAME"]}")
+        names.append(sdict["NAME"])
+        path="D:\\Python_Projects\\sound_engine_v2\\sounds\\sound_defs\\"
+        save_json(path+sdict["NAME"]+".json",sdict)
+    return
 
     #corrrect subtitles based on language
     if returnq: return subt_sounds
@@ -265,3 +273,8 @@ def load_sounds(lang,rootPath,returnq=False):
             subt_sounds[i]["SUBTITLE"]=correct_subt[subt_sounds[i]["NAME"]]
 
     return subt_sounds
+
+import os
+rootPath=os.path.dirname(os.path.abspath(__file__)).replace("\\","\\\\")
+print(rootPath)
+load_sounds("ENG",rootPath)

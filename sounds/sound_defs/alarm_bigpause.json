@@ -1,0 +1,10 @@
+{
+    "SUBTITLE": "*Alarm*",
+    "NAME": "alarm_bigpause",
+    "PATH": [
+        [
+            "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\apc_alarm_loop1.wav",
+            4
+        ]
+    ]
+}

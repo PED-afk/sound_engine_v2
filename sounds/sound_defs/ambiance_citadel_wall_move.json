@@ -1,0 +1,13 @@
+{
+    "SUBTITLE": "*Citadel outer wall moves*",
+    "NAME": "ambiance_citadel_wall_move",
+    "PATH": [
+        "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\ambiance\\citadel\\wall_move4.wav",
+        [
+            "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\ambiance\\citadel\\wall_crash1.wav",
+            1,
+            0,
+            1
+        ]
+    ]
+}
