@@ -4,12 +4,15 @@
     "SOUNDS": [
         {
             "PATH": "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\rmine_moveslow_loop1.wav",
-            "TIMES": [
-                "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\rmine_blip1.wav",
-                4,
-                1
-            ],
+            "TIMES": 1,
             "WAIT": 0,
+            "WAIT_BEFORE": 0,
+            "VOLUME": 1.0
+        },
+        {
+            "PATH": "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\rmine_blip1.wav",
+            "TIMES": 4,
+            "WAIT": 1,
             "WAIT_BEFORE": 0,
             "VOLUME": 1.0
         }
@@ -23,6 +26,5 @@
         0
     ],
     "SPEED": 0,
-    "WAIT_BEFORE_MOVE": 0,
-    "VOLUME": 1.0
+    "WAIT_BEFORE_MOVE": 0
 }

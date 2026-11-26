@@ -4,17 +4,25 @@ import json
 import sys
 
 
+# ============================================================
+# CONFIG
+# ============================================================
+
 ROOTPATH = Path(__file__).resolve().parent
 
 OLD_DIR = ROOTPATH / "sounds" / "sound_defs" / "old"
 NEW_DIR = ROOTPATH / "sounds" / "sound_defs" / "old_redone"
 
 
-def convert_path_entry(entry, filename):
-    """
-    Convert one old PATH entry to the new SOUNDS format.
+# ============================================================
+# PARSING OLD PATH FORMAT
+# ============================================================
 
-    Old formats supported:
+def parse_old_path_entry(entry):
+    """
+    Converts one old PATH entry into a new SOUNDS entry.
+
+    Supported formats:
         "filepath"
 
         ["filepath"]
@@ -24,45 +32,47 @@ def convert_path_entry(entry, filename):
         ["filepath", TIMES, WAIT]
 
         ["filepath", TIMES, WAIT, WAIT_BEFORE]
-
-    Missing values are filled with defaults.
     """
 
-    # Old format: path is just a string
     if isinstance(entry, str):
-        filepath = entry
+        path = entry
         times = 1
         wait = 0
         wait_before = 0
 
-    # Old format: path is a list
     elif isinstance(entry, list):
-        if len(entry) == 0:
-            raise ValueError(f"Empty PATH entry in {filename}")
+        if not entry or not isinstance(entry[0], str):
+            raise ValueError(f"Invalid PATH entry: {entry!r}")
 
-        filepath = entry[0]
-        times = entry[1] if len(entry) > 1 else 1
-        wait = entry[2] if len(entry) > 2 else 0
-        wait_before = entry[3] if len(entry) > 3 else 0
+        path = entry[0]
+
+        # Defaults for all optional fields
+        times = 1
+        wait = 0
+        wait_before = 0
+
+        if len(entry) >= 2:
+            times = entry[1]
+
+        if len(entry) >= 3:
+            wait = entry[2]
+
+        if len(entry) >= 4:
+            wait_before = entry[3]
+
+        if len(entry) > 4:
+            raise ValueError(f"Too many values in PATH entry: {entry!r}")
 
     else:
-        raise ValueError(
-            f"Unsupported PATH entry type in {filename}: "
-            f"{type(entry).__name__}"
-        )
+        raise ValueError(f"Unsupported PATH entry: {entry!r}")
 
-    if not isinstance(filepath, str):
-        raise ValueError(f"Invalid filepath in {filename}: {filepath!r}")
-
-    # Random-play folder paths are currently unsupported.
-    # Old format indicates these with a trailing slash/backslash.
-    if filepath.endswith("\\") or filepath.endswith("/"):
-        raise ValueError(
-            f"Random-folder playback is unsupported: {filepath}"
-        )
+    # Detect unsupported random-folder playback
+    normalized_path = path.replace("/", "\\")
+    if normalized_path.endswith("\\"):
+        raise RuntimeError(f"Random folder playback is unsupported: {path}")
 
     return {
-        "PATH": filepath,
+        "PATH": path,
         "TIMES": times,
         "WAIT": wait,
         "WAIT_BEFORE": wait_before,
@@ -70,96 +80,124 @@ def convert_path_entry(entry, filename):
     }
 
 
-def convert_old_json(data, filename):
-    """Convert one legacy JSON object to the new format."""
+def parse_old_path(path_data):
+    """
+    Converts the old PATH field into a list of new SOUNDS entries.
 
-    if "PATH" not in data:
-        raise ValueError(f"Missing PATH field in {filename}")
+    Supports:
+        PATH = "filepath"
 
-    old_paths = data["PATH"]
+        PATH = ["filepath1", "filepath2"]
 
-    # A single string or a single sound's parameter list
-    # should be treated as one entry.
-    if isinstance(old_paths, str):
-        entries = [old_paths]
+        PATH = [["filepath1", 2, 0.5], ["filepath2", 1, 0, 3]]
 
-    elif isinstance(old_paths, list):
-        if not old_paths:
-            entries = []
+        PATH = ["filepath1", ["filepath2", 2, 0.5, 3]]
 
-        # A single entry like:
-        # ["filepath", 1, 0, 2]
-        elif isinstance(old_paths[0], str):
-            entries = [old_paths]
+        PATH = ["filepath", 2, 0.5, 3]  # Single entry
+    """
 
-        # A collection of entries like:
-        # [
-        #   "filepath",
-        #   ["filepath", 1, 0, 2]
-        # ]
-        else:
-            entries = old_paths
+    if isinstance(path_data, str):
+        return [parse_old_path_entry(path_data)]
 
-    else:
-        raise ValueError(f"Invalid PATH format in {filename}")
+    if not isinstance(path_data, list):
+        raise ValueError(f"Unsupported PATH format: {path_data!r}")
 
-    sounds = [
-        convert_path_entry(entry, filename)
-        for entry in entries
-    ]
+    if not path_data:
+        return []
 
-    return {
-        "NAME": data.get("NAME", Path(filename).stem),
-        "SUBTITLE": data.get("SUBTITLE", ""),
+    # Detect a single entry formatted as:
+    # ["filepath", TIMES, WAIT, WAIT_BEFORE]
+    #
+    # If all items after the path are numbers, this is one sound entry,
+    # not a list of separate sounds.
+    if (
+        isinstance(path_data[0], str)
+        and all(
+            isinstance(value, (int, float))
+            and not isinstance(value, bool)
+            for value in path_data[1:]
+        )
+    ):
+        return [parse_old_path_entry(path_data)]
+
+    # Otherwise treat the list as a collection of sound entries.
+    sounds = []
+
+    for entry in path_data:
+        sounds.append(parse_old_path_entry(entry))
+
+    return sounds
+
+
+# ============================================================
+# CONVERSION
+# ============================================================
+
+def convert_file(old_file: Path):
+    with open(old_file, "r", encoding="utf-8") as f:
+        old_data = json.load(f)
+
+    name = old_data.get("NAME", old_file.stem)
+
+    # Convert the old PATH field
+    sounds = parse_old_path(old_data.get("PATH", []))
+
+    new_data = {
+        "NAME": name,
+        "SUBTITLE": old_data.get("SUBTITLE", ""),
         "SOUNDS": sounds,
         "START": [0, 0],
         "END": [0, 0],
         "SPEED": 0,
         "WAIT_BEFORE_MOVE": 0,
-        "VOLUME": 1.0,
     }
 
+    output_file = NEW_DIR / f"{old_file.stem}.json"
 
-def convert_old_sounds_folder():
-    """Convert all JSON files in OLD_DIR. Stop on first failure."""
+    with open(output_file, "w", encoding="utf-8") as f:
+        json.dump(new_data, f, indent=4, ensure_ascii=False)
+
+    print(f"[OK] {old_file.name} -> {output_file.name}")
+
+
+# ============================================================
+# MAIN
+# ============================================================
+
+def main():
+    if not OLD_DIR.exists():
+        print(f"[ERROR] Folder not found: {OLD_DIR}")
+        return
 
     NEW_DIR.mkdir(parents=True, exist_ok=True)
 
-    if not OLD_DIR.exists():
-        print(f"Folder not found: {OLD_DIR}")
-        return
+    # Only files in this folder, no subfolders
+    json_files = sorted(OLD_DIR.glob("*.json"))
 
-    # Only scan this folder, not subfolders.
-    files = sorted(OLD_DIR.glob("*.json"))
+    print(f"Found {len(json_files)} old sound definitions.\n")
 
-    print(f"Found {len(files)} old JSON files.")
-
-    for old_file in files:
+    for old_file in json_files:
         try:
-            with open(old_file, "r", encoding="utf-8") as f:
-                old_data = json.load(f)
+            convert_file(old_file)
 
-            new_data = convert_old_json(old_data, old_file.name)
-
-            new_file = NEW_DIR / old_file.name
-
-            with open(new_file, "w", encoding="utf-8") as f:
-                json.dump(
-                    new_data,
-                    f,
-                    indent=4,
-                    ensure_ascii=False
-                )
-
-            print(f"[OK] {old_file.name}")
-
-        except Exception as e:
-            print(f"\n[STOP] Failed to convert: {old_file.name}")
+        except RuntimeError as e:
+            # Unsupported folder/random playback:
+            # Stop the entire migration immediately.
+            print("\n[MIGRATION STOPPED]")
+            print(f"File: {old_file.name}")
             print(f"Reason: {e}")
             #sys.exit(1)
 
-    print("\nConversion finished successfully.")
+        except Exception as e:
+            # Stop on other conversion errors as well,
+            # to avoid silently skipping problematic definitions.
+            print("\n[MIGRATION STOPPED]")
+            print(f"File: {old_file.name}")
+            print(f"Reason: {e}")
+            #sys.exit(1)
+
+    print("\nMigration completed successfully.")
 
 
 if __name__ == "__main__":
-    convert_old_sounds_folder()
+    main()

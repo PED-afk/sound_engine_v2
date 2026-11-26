@@ -4,14 +4,16 @@
     "SOUNDS": [
         {
             "PATH": "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\train_horn2.wav",
-            "TIMES": [
-                "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\train_wheels_loop1.wav",
-                1,
-                0,
-                2
-            ],
+            "TIMES": 1,
             "WAIT": 0,
             "WAIT_BEFORE": 0,
+            "VOLUME": 1.0
+        },
+        {
+            "PATH": "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\train_wheels_loop1.wav",
+            "TIMES": 1,
+            "WAIT": 0,
+            "WAIT_BEFORE": 2,
             "VOLUME": 1.0
         }
     ],
@@ -24,6 +26,5 @@
         0
     ],
     "SPEED": 0,
-    "WAIT_BEFORE_MOVE": 0,
-    "VOLUME": 1.0
+    "WAIT_BEFORE_MOVE": 0
 }

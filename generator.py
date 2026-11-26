@@ -338,7 +338,6 @@ def main():
     definition_files += sorted(REDEFINITIONS_DIR.glob("*.json"))
 
     print(f"Found {len(definition_files)} sound definitions.")
-
     for definition_path in definition_files:
         try:
             generate_sound(definition_path)
