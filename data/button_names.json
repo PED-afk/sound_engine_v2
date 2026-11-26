@@ -1,0 +1,24 @@
+{
+    "ENG":{
+        "SEARCH":{"TEXT1":"Sound","TEXT2":"Map","TEXT3":"Image","COLOR1":"STATTEXT1"},
+        "STOP":{"TEXT1":"Stoping all sounds.","TEXT2":"Press delete to stop sounds.","HINT1":" (Press delete\n Does nothing.)","HINT2":"\tB\n\tB","COLOR1":"OPTION","COLOR2":"STEXT3","COLORE":"BG"},
+        "HIDE":{"TEXT1":"Hiding next subtitle.","TEXT2":"Showing next subtitle.","HINT1":"     (Switch with: ctrl)","HINT2":"","COLOR1":"OPTION","COLOR2":"STEXT3","COLORE":""},
+        "FONT":{"TEXT1":"Selected font: ","TEXT2":"","TEXT3":"ERROR","HINT1":"\t(Switch with: left/right arrows)","HINT2":"","COLOR1":"OPTION","COLOR2":"STEXT2","COLORE":"ERROR","COLORE2":"STEXT3"},
+        "SEARCH_TYPE":{"TEXT1":"Selected search type: ","TEXT2":"","HINT1":"\t(Switch with: shift)","HINT2":"","COLOR1":"OPTION","COLOR2":"STEXT2","COLORE":"ERROR","COLORE2":"STEXT3"},
+        "HINTS":{
+            "HINT1":{"TEXT1":"Scroll with up/down arrows or use the scroll wheel.","TEXT2":"","HINT1":"","HINT2":"","COLOR1":"STATTEXT1","COLOR2":"","COLORE":""},
+            "HINT2":{"TEXT1":"Start typing to reset the selector.","TEXT2":"","HINT1":"","HINT2":"","COLOR1":"STATTEXT1","COLOR2":"","COLORE":""}
+        }
+    },
+    "HUN":{
+        "SEARCH":{"TEXT1":"Hang","TEXT2":"Pálya","TEXT3":"Kép","COLOR1":"STATTEXT1"},
+        "STOP":{"TEXT1":"Minden hang megállítása.","TEXT2":"Használd a delete-et a hangok leállításához","HINT1":" (Nyomd meg a delete gombot vagy kattints\nNem csinál semmit.)","HINT2":"\tB\n\tB","COLOR1":"OPTION","COLOR2":"STEXT3","COLORE":"BG"},
+        "HIDE":{"TEXT1":"Következő felirat elrejtve.","TEXT2":"Következő felirat mutatása.","HINT1":"     (Váltás: shift)","HINT2":"","COLOR1":"OPTION","COLOR2":"STEXT3","COLORE":""},
+        "FONT":{"TEXT1":"Kiválasztott betűtípus: ","TEXT2":"","TEXT3":"ERROR","HINT1":"\t(Váltás: bal/jobb nyilakkal)","HINT2":"","COLOR1":"OPTION","COLOR2":"STEXT2","COLORE":"ERROR","COLORE2":"STEXT3"},
+        "SEARCH_TYPE":{"TEXT1":"Kiválasztott keresési típus: ","TEXT2":"","HINT1":"\t(Váltás: shift)","HINT2":"","COLOR1":"OPTION","COLOR2":"STEXT2","COLORE":"ERROR","COLORE2":"STEXT3"},
+        "HINTS":{
+            "HINT1":{"TEXT1":"Görgess a fel/le nyilakkal vagy a görgővel.","TEXT2":"","HINT1":"","HINT2":"","COLOR1":"STATTEXT1","COLOR2":"","COLORE":""},
+            "HINT2":{"TEXT1":"Kezdj el gépelni a kiválasztó visszaállításához.","TEXT2":"","HINT1":"","HINT2":"","COLOR1":"STATTEXT1","COLOR2":"","COLORE":""}
+        }
+    }
+}

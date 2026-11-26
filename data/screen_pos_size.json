@@ -1,0 +1,27 @@
+{
+    "MAIN":{
+        "MONITOR":0,
+        "SHAPE":"req",
+        "WIDTH": 90,
+        "HEIGHT": 90,
+        "STARTX": 0,
+        "STARTY": 0
+    },
+    "SECOND":{
+        "MONITOR":1,
+        "SHAPE":"req",
+        "WIDTH": 46.875,
+        "HEIGHT": 46.296,
+        "STARTX": -5,
+        "STARTY": 0
+    },
+    "MAPS":{
+        "MONITOR":0,
+        "SHAPE":"sqr",
+        "WIDTH": 41.67,
+        "EXTRAWIDTH": 200,
+        "HEIGHT": 41.67,
+        "STARTX": 895,
+        "STARTY": 0
+    }
+}

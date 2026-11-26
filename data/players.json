@@ -1,0 +1,24 @@
+[
+    {
+        "NAME":"Player1",
+        "CLASS":"Human Engineer",
+        "POS":{
+            "X":0,
+            "Y":0
+        },
+        "LAYER":0,
+        "COLOR":"yellow",
+        "SIZE":30
+    },
+    {
+        "NAME":"Player2",
+        "CLASS":"Vortigaunt",
+        "POS":{
+            "X":40,
+            "Y":0
+        },
+        "LAYER":0,
+        "COLOR":"blue",
+        "SIZE":30
+    }
+]

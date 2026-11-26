@@ -1,0 +1,1 @@
+numpy>=1.24\nsounddevice>=0.4.6\nsoundfile>=0.12\n

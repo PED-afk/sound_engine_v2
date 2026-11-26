@@ -1,0 +1,18 @@
+[
+    {
+        "NAME": "head_crab.gif",
+        "PATH": "head_crab.gif",
+        "SIZE": {
+            "X": 50,
+            "Y": 50
+        }
+    },
+    {
+        "NAME": "supply_create.gif",
+        "PATH": "supply_create.gif",
+        "SIZE": {
+            "X": 50,
+            "Y": 50
+        }
+    }
+]

@@ -1,0 +1,49 @@
+[
+    {
+        "NAME": "button",
+        "SUBT": "*beep*",
+        "LANG": "UNI",
+        "PATHS":[
+            {
+                "PATH": "UI\\beep.wav",
+                "TIMES": 1,
+                "WAIT": 0,
+                "WAIT_BEFORE": 0
+            }
+        ]
+    },
+    {
+        "NAME": "buttons",
+        "SUBT": "*beeps*",
+        "LANG":"UNI",
+        "PATHS":[
+            {
+                "PATH": "UI\\beep.wav",
+                "TIMES":{
+                    "min":3,
+                    "max":5
+                },
+                "WAIT":{
+                    "min":0,
+                    "max":2
+                },
+                "WAIT_BEFORE": 0.1
+            },
+            {
+                "PATH": "UI\\beep.wav",
+                "TIMES":{
+                    "min":3,
+                    "max":5
+                },
+                "WAIT":{
+                    "min":0,
+                    "max":2
+                },
+                "WAIT_BEFORE":{
+                    "min":0,
+                    "max":1
+                }
+            }
+        ]
+    }
+]

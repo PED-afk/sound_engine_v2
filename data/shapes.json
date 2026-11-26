@@ -1,0 +1,26 @@
+[
+    {
+        "NAME": "test.gif",
+        "PATH": "test.gif",
+        "SIZE": {
+            "X": 1080,
+            "Y": 1080
+        }
+    },
+    {
+        "NAME": "test2.gif",
+        "PATH": "test2.gif",
+        "SIZE": {
+            "X": 800,
+            "Y": 600
+        }
+    },
+    {
+        "NAME": "test_small.gif",
+        "PATH": "test_small.gif",
+        "SIZE": {
+            "X": 50,
+            "Y": 50
+        }
+    }
+]
