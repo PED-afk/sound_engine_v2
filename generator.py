@@ -76,29 +76,55 @@ def load_audio(path: Path) -> np.ndarray:
 # ============================================================
 # POSITION / SPATIAL AUDIO
 # ============================================================
-def get_position(t: float, start, end, speed: float, move_start: float):
+def get_position(
+        t,
+        start,
+        end,
+        speed,
+        move_start,
+        orbit_mode=False,
+        orbit_distance=0
+    ):
     """
-    Return sound position at time t.
+    Linear movement or circular orbit.
 
-    Movement begins at move_start.
-    Speed is in world units per second.
-    The sound remains at END after arriving.
+    Linear mode:
+        SPEED = units per second
+
+    Orbit mode:
+        SPEED = degrees per second
+        DIST = orbit radius
     """
+
+    if t <= move_start:
+        if orbit_mode:
+            return np.array([orbit_distance, 0.0])
+
+        return np.asarray(start, dtype=float)
+
+    elapsed = t - move_start
+
+    if orbit_mode:
+        angle = math.radians(speed * elapsed)
+
+        x = orbit_distance * math.cos(angle)
+        y = orbit_distance * math.sin(angle)
+
+        return np.array([x, y])
+
     start = np.asarray(start, dtype=float)
     end = np.asarray(end, dtype=float)
 
-    if t <= move_start or speed <= 0:
+    direction = end - start
+    distance = np.linalg.norm(direction)
+
+    if distance == 0 or speed <= 0:
         return start
 
-    distance = np.linalg.norm(end - start)
-
-    if distance == 0:
-        return end
-
     travel_time = distance / speed
-    progress = min((t - move_start) / travel_time, 1.0)
+    progress = min(elapsed / travel_time, 1.0)
 
-    return start + (end - start) * progress
+    return start + direction * progress
 
 def spatial_gains(position):
     """
@@ -138,21 +164,37 @@ def distance_gain(position):
 # ============================================================
 # JSON PROCESSING / MIXING
 # ============================================================
-def generate_sound(definition_path: Path):
+def generate_sound(definition_path: Path, lang:str="eng"):
     with open(definition_path, "r", encoding="utf-8") as f:
         definition = json.load(f)
 
     name = definition["NAME"]
     subtitle = definition.get("SUBTITLE", "")
 
-    start = definition.get("START", [0, 0])
-    end = definition.get("END", [0, 0])
-
     speed = float(definition.get("SPEED", 0))
     movement_delay = float(definition.get("WAIT_BEFORE_MOVE", 0))
-    master_volume = float(definition.get("VOLUME", 1.0))
 
-    sounds = definition.get("SOUNDS", [])
+    orbit_mode = "START" not in definition
+
+    if orbit_mode:
+        if "DIST" not in definition or "SPEED" not in definition:
+            raise ValueError("Orbit mode requires DIST and SPEED")
+
+        orbit_distance = float(definition["DIST"])
+
+        if orbit_distance < 0:
+            raise ValueError("DIST cannot be negative")
+
+        start = None
+        end = None
+
+    else:
+        start = definition["START"]
+        end = definition["END"]
+        orbit_distance = None
+        master_volume = float(definition.get("VOLUME", 1.0))
+
+        sounds = definition.get("SOUNDS", [])
 
     # Load all source audio
     loaded_sounds = []
@@ -164,7 +206,10 @@ def generate_sound(definition_path: Path):
             print(f"[WARNING] Missing audio file: {source_path}")
             continue
 
-        audio = load_audio(source_path)
+        if lang=="eng":
+            audio=load_audio(source_path)
+        else:
+            audio=load_audio(Path(str(source_path).replace("eng", lang)))
 
         times = max(1, int(sound.get("TIMES", 1)))
         wait = max(0.0, float(sound.get("WAIT", 0)))
@@ -213,6 +258,24 @@ def generate_sound(definition_path: Path):
 
     total_frames = int(math.ceil(total_duration * SAMPLE_RATE))
 
+    # Check whether the sound has enough time to reach END
+    travel_distance = np.linalg.norm(
+        np.asarray(end, dtype=float) - np.asarray(start, dtype=float)
+    )
+    travel_time = travel_distance / speed if speed > 0 else float("inf")
+    arrival_time = movement_delay + travel_time
+    if total_duration >= arrival_time:
+        pass
+        #print(f"[REACHED END] {name}: {end} (at {arrival_time:.2f}s)")
+    else:
+        print(
+            f"[DID NOT REACH END] {name}: "
+            f"stopped at {get_position(total_duration, start, end, speed, movement_delay).tolist()} "
+            f"(END: {end})"
+        )
+
+
+
     # Output channels: FL, FR, RL, RR, LFE
     output = np.zeros((total_frames, 5), dtype=np.float32)
 
@@ -247,7 +310,15 @@ def generate_sound(definition_path: Path):
 
             # Get position over time
             positions = np.array([
-                get_position(t, start, end, speed, movement_delay)
+                get_position(
+                    t,
+                    start,
+                    end,
+                    speed,
+                    movement_delay,
+                    orbit_mode,
+                    orbit_distance if orbit_mode else 0
+                )
                 for t in times
             ])
 
@@ -324,7 +395,7 @@ def generate_sound(definition_path: Path):
 # MAIN
 # ============================================================
 
-def main():
+def main(lang):
     PLAYABLES_DIR.mkdir(parents=True, exist_ok=True)
 
     if not DEFINITIONS_DIR.exists():
@@ -340,12 +411,20 @@ def main():
     print(f"Found {len(definition_files)} sound definitions.")
     for definition_path in definition_files:
         try:
-            generate_sound(definition_path)
+            generate_sound(definition_path, lang)
         except Exception as e:
             print(f"[ERROR] {definition_path.name}: {e}")
+        print("")
 
     print("Finished generating playables.")
 
 
 if __name__ == "__main__":
-    main()
+    doEng=False
+    if doEng:
+        main(lang="eng")
+    else:
+        main(lang="hun")
+
+
+

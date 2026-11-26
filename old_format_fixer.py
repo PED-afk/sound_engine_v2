@@ -150,6 +150,7 @@ def convert_file(old_file: Path):
         "END": [0, 0],
         "SPEED": 0,
         "WAIT_BEFORE_MOVE": 0,
+        "VOLUME": 1.0
     }
 
     output_file = NEW_DIR / f"{old_file.stem}.json"
@@ -165,6 +166,8 @@ def convert_file(old_file: Path):
 # ============================================================
 
 def main():
+    print("Don't run this again or save the already fixed files")
+    return
     if not OLD_DIR.exists():
         print(f"[ERROR] Folder not found: {OLD_DIR}")
         return
@@ -199,5 +202,9 @@ def main():
     print("\nMigration completed successfully.")
 
 
+print("Don't run this again or save the already fixed files")
+exit()
 if __name__ == "__main__":
+    print("Don't run this again or save the already fixed files")
+    exit()
     main()

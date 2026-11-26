@@ -11,13 +11,14 @@
         }
     ],
     "START": [
-        0,
-        0
+        75,
+        10
     ],
     "END": [
-        0,
-        0
+        75,
+        10
     ],
     "SPEED": 0,
-    "WAIT_BEFORE_MOVE": 0
+    "WAIT_BEFORE_MOVE": 0,
+    "VOLUME": 1.0
 }

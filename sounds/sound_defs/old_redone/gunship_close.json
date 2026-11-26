@@ -4,20 +4,21 @@
     "SOUNDS": [
         {
             "PATH": "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\engine_whine_loop1.wav",
-            "TIMES": 1,
+            "TIMES": 4,
             "WAIT": 0,
             "WAIT_BEFORE": 0,
             "VOLUME": 1.0
         }
     ],
     "START": [
-        0,
-        0
+        -50,
+        -20
     ],
     "END": [
-        0,
-        0
+        -50,
+        -20
     ],
     "SPEED": 0,
-    "WAIT_BEFORE_MOVE": 0
+    "WAIT_BEFORE_MOVE": 0,
+    "VOLUME": 1.0
 }

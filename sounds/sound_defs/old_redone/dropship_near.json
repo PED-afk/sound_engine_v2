@@ -18,13 +18,14 @@
         }
     ],
     "START": [
-        0,
-        0
+        50,
+        50
     ],
     "END": [
-        0,
-        0
+        50,
+        50
     ],
     "SPEED": 0,
-    "WAIT_BEFORE_MOVE": 0
+    "WAIT_BEFORE_MOVE": 0,
+    "VOLUME": 0.75
 }

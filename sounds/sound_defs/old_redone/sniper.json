@@ -8,16 +8,24 @@
             "WAIT": 0,
             "WAIT_BEFORE": 0,
             "VOLUME": 1.0
+        },
+        {
+            "PATH": "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\bulletltor09.wav",
+            "TIMES": 1,
+            "WAIT": 0,
+            "WAIT_BEFORE": 0.1,
+            "VOLUME": 1.0
         }
     ],
     "START": [
-        0,
-        0
+        50,
+        75
     ],
     "END": [
-        0,
-        0
+        50,
+        -75
     ],
-    "SPEED": 0,
-    "WAIT_BEFORE_MOVE": 0
+    "SPEED": 140,
+    "WAIT_BEFORE_MOVE": 0.1,
+    "VOLUME": 1.0
 }

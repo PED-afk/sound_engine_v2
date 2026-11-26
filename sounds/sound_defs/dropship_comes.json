@@ -1,0 +1,31 @@
+{
+    "NAME": "dropship_comes",
+    "SUBTITLE": "*Dropship in distance getting closer*",
+    "SOUNDS": [
+        {
+            "PATH": "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\dropship_engine_distant_loop1.wav",
+            "TIMES": 6,
+            "WAIT": 0,
+            "WAIT_BEFORE": 0,
+            "VOLUME": 1.0
+        },
+        {
+            "PATH": "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\dropship_engine_distant_loop1.wav",
+            "TIMES": 6,
+            "WAIT": 0,
+            "WAIT_BEFORE": 2,
+            "VOLUME": 1.0
+        }
+    ],
+    "START": [
+        100,
+        -100
+    ],
+    "END": [
+        0,
+        0
+    ],
+    "SPEED": 14,
+    "WAIT_BEFORE_MOVE": 0,
+    "VOLUME": 0.75
+}

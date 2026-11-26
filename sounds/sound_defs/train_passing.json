@@ -11,15 +11,15 @@
         },
         {
             "PATH":"sounds\\UNI\\train_wheels_loop1.wav",
-            "TIMES":2,
+            "TIMES":4,
             "WAIT":0,
             "WAIT_BEFORE":2,
             "VOLUME":1
         }
     ],
-    "START":[100,0],
-    "END":[-100,0],
-    "SPEED":20,
+    "START":[100,80],
+    "END":[-100,-80],
+    "SPEED":25,
     "WAIT_BEFORE_MOVE":2.0,
     "VOLUME":1
 }

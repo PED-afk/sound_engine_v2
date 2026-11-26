@@ -1,0 +1,24 @@
+{
+    "NAME": "gunship_far",
+    "SUBTITLE": "*Gunship in distance*",
+    "SOUNDS": [
+        {
+            "PATH": "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\engine_rotor_loop1.wav",
+            "TIMES": 6,
+            "WAIT": 0,
+            "WAIT_BEFORE": 0,
+            "VOLUME": 1.0
+        }
+    ],
+    "START": [
+        80,
+        -70
+    ],
+    "END": [
+        -100,
+        10
+    ],
+    "SPEED": 10,
+    "WAIT_BEFORE_MOVE": 0,
+    "VOLUME": 1.0
+}

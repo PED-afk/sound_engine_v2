@@ -1,0 +1,24 @@
+{
+    "NAME": "test_neg_pos",
+    "SUBTITLE": "button",
+    "SOUNDS": [
+        {
+            "PATH": "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\UI\\beep.wav",
+            "TIMES": 1,
+            "WAIT": 0,
+            "WAIT_BEFORE": 0,
+            "VOLUME": 1.0
+        }
+    ],
+    "START": [
+        -75,
+        75
+    ],
+    "END": [
+        -75,
+        75
+    ],
+    "SPEED": 0,
+    "WAIT_BEFORE_MOVE": 0,
+    "VOLUME":2.0
+}

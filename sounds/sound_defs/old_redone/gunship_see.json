@@ -1,5 +1,5 @@
 {
-    "NAME": "gunship_see",
+    "NAME": "gunship_see_close",
     "SUBTITLE": "*Gunship screams*",
     "SOUNDS": [
         {
@@ -12,12 +12,13 @@
     ],
     "START": [
         0,
-        0
+        -30
     ],
     "END": [
         0,
-        0
+        -30
     ],
     "SPEED": 0,
-    "WAIT_BEFORE_MOVE": 0
+    "WAIT_BEFORE_MOVE": 0,
+    "VOLUME": 1.0
 }

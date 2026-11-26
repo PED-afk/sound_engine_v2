@@ -5,7 +5,7 @@
         {
             "PATH": "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\ministrider_footstep5.wav",
             "TIMES": 6,
-            "WAIT": 0,
+            "WAIT": 0.05,
             "WAIT_BEFORE": 0,
             "VOLUME": 1.0
         }
@@ -19,5 +19,6 @@
         0
     ],
     "SPEED": 0,
-    "WAIT_BEFORE_MOVE": 0
+    "WAIT_BEFORE_MOVE": 0,
+    "VOLUME": 1.0
 }

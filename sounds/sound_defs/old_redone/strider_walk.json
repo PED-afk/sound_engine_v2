@@ -4,34 +4,35 @@
     "SOUNDS": [
         {
             "PATH": "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\strider_step1.wav",
-            "TIMES": 3,
-            "WAIT": 3,
+            "TIMES": 6,
+            "WAIT": 2.8,
             "WAIT_BEFORE": 0,
             "VOLUME": 1.0
         },
         {
             "PATH": "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\strider_step4.wav",
-            "TIMES": 3,
-            "WAIT": 3,
+            "TIMES": 6,
+            "WAIT": 2.8,
             "WAIT_BEFORE": 1,
             "VOLUME": 1.0
         },
         {
             "PATH": "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\strider_step6.wav",
-            "TIMES": 3,
-            "WAIT": 3,
+            "TIMES": 6,
+            "WAIT": 2.8,
             "WAIT_BEFORE": 2,
             "VOLUME": 1.0
         }
     ],
     "START": [
-        0,
-        0
+        80,
+        -40
     ],
     "END": [
-        0,
-        0
+        40,
+        80
     ],
-    "SPEED": 0,
-    "WAIT_BEFORE_MOVE": 0
+    "SPEED": 10,
+    "WAIT_BEFORE_MOVE": 0,
+    "VOLUME": 1.0
 }

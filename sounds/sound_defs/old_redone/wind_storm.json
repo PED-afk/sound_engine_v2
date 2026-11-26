@@ -4,20 +4,14 @@
     "SOUNDS": [
         {
             "PATH": "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\ambiance\\wind\\wind_hit3.wav",
-            "TIMES": 1,
+            "TIMES": 4,
             "WAIT": 0,
             "WAIT_BEFORE": 0,
             "VOLUME": 1.0
         }
     ],
-    "START": [
-        0,
-        0
-    ],
-    "END": [
-        0,
-        0
-    ],
-    "SPEED": 0,
-    "WAIT_BEFORE_MOVE": 0
+    "DIST":50,
+    "SPEED": 30,
+    "WAIT_BEFORE_MOVE": 0,
+    "VOLUME": 0.5
 }
