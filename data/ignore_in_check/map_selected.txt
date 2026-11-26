@@ -1,3 +1,0 @@
-svgs\test
-0
-False

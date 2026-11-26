@@ -1,0 +1,29 @@
+{
+    "NAME": "ambiance_citadel_wall_move",
+    "SUBTITLE": "*Citadel outer wall moves*",
+    "SOUNDS": [
+        {
+            "PATH": "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\ambiance\\citadel\\wall_move4.wav",
+            "TIMES": [
+                "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\ambiance\\citadel\\wall_crash1.wav",
+                1,
+                0,
+                1
+            ],
+            "WAIT": 0,
+            "WAIT_BEFORE": 0,
+            "VOLUME": 1.0
+        }
+    ],
+    "START": [
+        0,
+        0
+    ],
+    "END": [
+        0,
+        0
+    ],
+    "SPEED": 0,
+    "WAIT_BEFORE_MOVE": 0,
+    "VOLUME": 1.0
+}

@@ -1,0 +1,16 @@
+{
+    "NAME": "number_sequence_file_fast",
+    "SUBTITLE": "",
+    "SOUNDS": [],
+    "START": [
+        0,
+        0
+    ],
+    "END": [
+        0,
+        0
+    ],
+    "SPEED": 0,
+    "WAIT_BEFORE_MOVE": 0,
+    "VOLUME": 1.0
+}

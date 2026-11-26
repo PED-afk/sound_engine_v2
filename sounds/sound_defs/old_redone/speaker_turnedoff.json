@@ -1,0 +1,24 @@
+{
+    "NAME": "speaker_turnedoff",
+    "SUBTITLE": "Priority Warning. Outland stabilization force six Nova Prospekt.\nPerimeter restrictors disengaged. Priority Warning. Perimeter restrictors disengaged.",
+    "SOUNDS": [
+        {
+            "PATH": "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\eng\\fprison_perimeterrestrictors.wav",
+            "TIMES": 1,
+            "WAIT": 0,
+            "WAIT_BEFORE": 0,
+            "VOLUME": 1.0
+        }
+    ],
+    "START": [
+        0,
+        0
+    ],
+    "END": [
+        0,
+        0
+    ],
+    "SPEED": 0,
+    "WAIT_BEFORE_MOVE": 0,
+    "VOLUME": 1.0
+}

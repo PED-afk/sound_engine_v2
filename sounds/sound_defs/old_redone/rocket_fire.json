@@ -1,0 +1,29 @@
+{
+    "NAME": "rocket_fire",
+    "SUBTITLE": "*Rocket fired and flies*",
+    "SOUNDS": [
+        {
+            "PATH": "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\rocketfire1.wav",
+            "TIMES": [
+                "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\rocket1.wav",
+                1,
+                0,
+                0.5
+            ],
+            "WAIT": 0,
+            "WAIT_BEFORE": 0,
+            "VOLUME": 1.0
+        }
+    ],
+    "START": [
+        0,
+        0
+    ],
+    "END": [
+        0,
+        0
+    ],
+    "SPEED": 0,
+    "WAIT_BEFORE_MOVE": 0,
+    "VOLUME": 1.0
+}

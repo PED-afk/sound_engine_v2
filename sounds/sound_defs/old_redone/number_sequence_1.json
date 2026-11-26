@@ -1,0 +1,94 @@
+{
+    "NAME": "number_sequence_1",
+    "SUBTITLE": "zero, eight; two, zero; one, seven; one, nine",
+    "SOUNDS": [
+        {
+            "PATH": "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\eng\\combine_radio\\overw\\numbers\\zero.wav",
+            "TIMES": 1,
+            "WAIT": 0,
+            "WAIT_BEFORE": 0.0,
+            "VOLUME": 1.0
+        },
+        {
+            "PATH": "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\eng\\combine_radio\\overw\\numbers\\eight.wav",
+            "TIMES": 1,
+            "WAIT": 0,
+            "WAIT_BEFORE": 0.9,
+            "VOLUME": 1.0
+        },
+        {
+            "PATH": "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\eng\\combine_radio\\overw\\numbers\\_comma.wav",
+            "TIMES": 1,
+            "WAIT": 0,
+            "WAIT_BEFORE": 1.8,
+            "VOLUME": 1.0
+        },
+        {
+            "PATH": "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\eng\\combine_radio\\overw\\numbers\\two.wav",
+            "TIMES": 1,
+            "WAIT": 0,
+            "WAIT_BEFORE": 2.7,
+            "VOLUME": 1.0
+        },
+        {
+            "PATH": "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\eng\\combine_radio\\overw\\numbers\\zero.wav",
+            "TIMES": 1,
+            "WAIT": 0,
+            "WAIT_BEFORE": 3.6,
+            "VOLUME": 1.0
+        },
+        {
+            "PATH": "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\eng\\combine_radio\\overw\\numbers\\_comma.wav",
+            "TIMES": 1,
+            "WAIT": 0,
+            "WAIT_BEFORE": 4.5,
+            "VOLUME": 1.0
+        },
+        {
+            "PATH": "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\eng\\combine_radio\\overw\\numbers\\one.wav",
+            "TIMES": 1,
+            "WAIT": 0,
+            "WAIT_BEFORE": 5.4,
+            "VOLUME": 1.0
+        },
+        {
+            "PATH": "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\eng\\combine_radio\\overw\\numbers\\seven.wav",
+            "TIMES": 1,
+            "WAIT": 0,
+            "WAIT_BEFORE": 6.3,
+            "VOLUME": 1.0
+        },
+        {
+            "PATH": "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\eng\\combine_radio\\overw\\numbers\\_comma.wav",
+            "TIMES": 1,
+            "WAIT": 0,
+            "WAIT_BEFORE": 7.2,
+            "VOLUME": 1.0
+        },
+        {
+            "PATH": "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\eng\\combine_radio\\overw\\numbers\\one.wav",
+            "TIMES": 1,
+            "WAIT": 0,
+            "WAIT_BEFORE": 8.1,
+            "VOLUME": 1.0
+        },
+        {
+            "PATH": "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\eng\\combine_radio\\overw\\numbers\\nine.wav",
+            "TIMES": 1,
+            "WAIT": 0,
+            "WAIT_BEFORE": 9.0,
+            "VOLUME": 1.0
+        }
+    ],
+    "START": [
+        0,
+        0
+    ],
+    "END": [
+        0,
+        0
+    ],
+    "SPEED": 0,
+    "WAIT_BEFORE_MOVE": 0,
+    "VOLUME": 1.0
+}

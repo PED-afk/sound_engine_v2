@@ -1,0 +1,38 @@
+{
+    "NAME": "hunter_run",
+    "SUBTITLE": "*Hunter runs*",
+    "SOUNDS": [
+        {
+            "PATH": "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\ministrider_footstep5.wav",
+            "TIMES": 8,
+            "WAIT": 0,
+            "WAIT_BEFORE": 0,
+            "VOLUME": 1.0
+        },
+        {
+            "PATH": "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\ministrider_footstep5.wav",
+            "TIMES": 8,
+            "WAIT": 0,
+            "WAIT_BEFORE": 0.5,
+            "VOLUME": 1.0
+        },
+        {
+            "PATH": "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\ministrider_footstep2.wav",
+            "TIMES": 1,
+            "WAIT": 0,
+            "WAIT_BEFORE": 4.75,
+            "VOLUME": 1.0
+        }
+    ],
+    "START": [
+        0,
+        0
+    ],
+    "END": [
+        0,
+        0
+    ],
+    "SPEED": 0,
+    "WAIT_BEFORE_MOVE": 0,
+    "VOLUME": 1.0
+}

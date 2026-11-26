@@ -1,0 +1,31 @@
+{
+    "NAME": "train_bell",
+    "SUBTITLE": "*Rail-crossing bell*",
+    "SOUNDS": [
+        {
+            "PATH": "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\train_crossing_bell_loop1.wav",
+            "TIMES": 3,
+            "WAIT": 0,
+            "WAIT_BEFORE": 0,
+            "VOLUME": 1.0
+        },
+        {
+            "PATH": "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\train_crossing_bell_loop1.wav",
+            "TIMES": 3,
+            "WAIT": 0,
+            "WAIT_BEFORE": 0.5,
+            "VOLUME": 1.0
+        }
+    ],
+    "START": [
+        0,
+        0
+    ],
+    "END": [
+        0,
+        0
+    ],
+    "SPEED": 0,
+    "WAIT_BEFORE_MOVE": 0,
+    "VOLUME": 1.0
+}

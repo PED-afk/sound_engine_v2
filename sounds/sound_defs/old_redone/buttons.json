@@ -1,0 +1,31 @@
+{
+    "NAME": "buttons",
+    "SUBTITLE": "buttons",
+    "SOUNDS": [
+        {
+            "PATH": "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\UI\\beep.wav",
+            "TIMES": 4,
+            "WAIT": 1,
+            "WAIT_BEFORE": 0.1,
+            "VOLUME": 1.0
+        },
+        {
+            "PATH": "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\UI\\beep.wav",
+            "TIMES": 5,
+            "WAIT": 0,
+            "WAIT_BEFORE": 0,
+            "VOLUME": 1.0
+        }
+    ],
+    "START": [
+        0,
+        0
+    ],
+    "END": [
+        0,
+        0
+    ],
+    "SPEED": 0,
+    "WAIT_BEFORE_MOVE": 0,
+    "VOLUME": 1.0
+}

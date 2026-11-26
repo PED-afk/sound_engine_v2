@@ -1,0 +1,27 @@
+{
+    "NAME": "manhack",
+    "SUBTITLE": "*Manhack flies*",
+    "SOUNDS": [
+        {
+            "PATH": "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\mh_engine_loop1.wav",
+            "TIMES": [
+                "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\mh_blade_loop1.wav",
+                5
+            ],
+            "WAIT": 0,
+            "WAIT_BEFORE": 0,
+            "VOLUME": 1.0
+        }
+    ],
+    "START": [
+        0,
+        0
+    ],
+    "END": [
+        0,
+        0
+    ],
+    "SPEED": 0,
+    "WAIT_BEFORE_MOVE": 0,
+    "VOLUME": 1.0
+}

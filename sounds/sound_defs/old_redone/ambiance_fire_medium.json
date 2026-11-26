@@ -1,0 +1,24 @@
+{
+    "NAME": "ambiance_fire_medium",
+    "SUBTITLE": "*Medium fire crackles*",
+    "SOUNDS": [
+        {
+            "PATH": "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\ambiance\\fire\\fire_med_loop1.wav",
+            "TIMES": 1,
+            "WAIT": 0,
+            "WAIT_BEFORE": 0,
+            "VOLUME": 1.0
+        }
+    ],
+    "START": [
+        0,
+        0
+    ],
+    "END": [
+        0,
+        0
+    ],
+    "SPEED": 0,
+    "WAIT_BEFORE_MOVE": 0,
+    "VOLUME": 1.0
+}

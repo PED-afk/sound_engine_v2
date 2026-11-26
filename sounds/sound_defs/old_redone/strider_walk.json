@@ -1,0 +1,38 @@
+{
+    "NAME": "strider_walk",
+    "SUBTITLE": "*Strider walking*",
+    "SOUNDS": [
+        {
+            "PATH": "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\strider_step1.wav",
+            "TIMES": 3,
+            "WAIT": 3,
+            "WAIT_BEFORE": 0,
+            "VOLUME": 1.0
+        },
+        {
+            "PATH": "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\strider_step4.wav",
+            "TIMES": 3,
+            "WAIT": 3,
+            "WAIT_BEFORE": 1,
+            "VOLUME": 1.0
+        },
+        {
+            "PATH": "d:\\\\Python_Projects\\\\sound_engine_v2\\\\sounds\\UNI\\strider_step6.wav",
+            "TIMES": 3,
+            "WAIT": 3,
+            "WAIT_BEFORE": 2,
+            "VOLUME": 1.0
+        }
+    ],
+    "START": [
+        0,
+        0
+    ],
+    "END": [
+        0,
+        0
+    ],
+    "SPEED": 0,
+    "WAIT_BEFORE_MOVE": 0,
+    "VOLUME": 1.0
+}
