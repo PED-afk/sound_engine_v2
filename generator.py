@@ -18,6 +18,15 @@ DEFINITIONS_DIR = ROOTPATH / "sounds" / "sound_defs"
 REDEFINITIONS_DIR = ROOTPATH / "sounds" / "sound_defs" / "old_redone"
 PLAYABLES_DIR = ROOTPATH / "sounds" / "playables"
 
+
+# ============================================================
+# OUTPUT SETTINGS
+# ============================================================
+
+OUTPUT_LAYOUT = "5.1"    # "4.1" or "5.1"
+USE_CENTER = True         # Only affects 5.1
+USE_SUBWOOFER = False   # Keep disabled
+
 SAMPLE_RATE = 48000
 CHUNK_SIZE = 1024
 
@@ -38,6 +47,63 @@ SPEAKERS = [
 ]
 
 LFE_CHANNEL = 4  # Fifth channel, left empty
+
+
+def get_output_channels():
+    if OUTPUT_LAYOUT == "4.1":
+        return ["FL", "FR", "RL", "RR", "LFE"]
+
+    elif OUTPUT_LAYOUT == "5.1":
+        if USE_CENTER:
+            return ["FL", "FR", "C", "LFE", "RL", "RR"]
+        else:
+            return ["FL", "FR", "RL", "RR", "LFE"]
+
+    raise ValueError(f"Unsupported output layout: {OUTPUT_LAYOUT}")
+
+
+def get_spatial_gains(position):
+    x, y = position
+
+    x = float(np.clip(x / 100.0, -1.0, 1.0))
+    y = float(np.clip(y / 100.0, -1.0, 1.0))
+
+    right = (x + 1.0) / 2.0
+    front = (y + 1.0) / 2.0
+
+    # Basic quad panning
+    fl = (1 - right) * front
+    fr = right * front
+    rl = (1 - right) * (1 - front)
+    rr = right * (1 - front)
+
+    gains = {
+        "FL": fl,
+        "FR": fr,
+        "RL": rl,
+        "RR": rr,
+        "C": 0.0,
+        "LFE": 0.0,
+    }
+
+    # Center speaker only exists in 5.1 with USE_CENTER enabled
+    if OUTPUT_LAYOUT == "5.1" and USE_CENTER:
+        center = front * (1.0 - abs(x))
+        gains["C"] = center
+
+        # Reduce front left/right contribution when center is active
+        gains["FL"] *= (1.0 - center)
+        gains["FR"] *= (1.0 - center)
+
+    # Keep overall panning power reasonably consistent
+    power = sum(g * g for g in gains.values())
+
+    if power > 0:
+        scale = 1.0 / math.sqrt(power)
+        gains = {key: value * scale for key, value in gains.items()}
+
+    return gains
+
 
 
 # ============================================================
@@ -209,7 +275,13 @@ def generate_sound(definition_path: Path, lang:str="eng"):
         if lang=="eng":
             audio=load_audio(source_path)
         else:
-            audio=load_audio(Path(str(source_path).replace("eng", lang)))
+            parts=list(source_path.parts)
+            parts=[
+                lang if part == "eng" else part
+                for part in parts
+            ]
+            source_path=Path(*parts)
+            audio=load_audio(source_path)
 
         times = max(1, int(sound.get("TIMES", 1)))
         wait = max(0.0, float(sound.get("WAIT", 0)))
@@ -277,7 +349,14 @@ def generate_sound(definition_path: Path, lang:str="eng"):
 
 
     # Output channels: FL, FR, RL, RR, LFE
-    output = np.zeros((total_frames, 5), dtype=np.float32)
+    #output = np.zeros((total_frames, 5), dtype=np.float32)
+    channels = get_output_channels()
+    channel_count = len(channels)
+
+    output = np.zeros(
+        (total_frames, channel_count),
+        dtype=np.float32
+    )
 
     # Mix each sound into the output
     for item in scheduled:
@@ -308,7 +387,7 @@ def generate_sound(definition_path: Path, lang:str="eng"):
                 / SAMPLE_RATE
             )
 
-            # Get position over time
+            """# Get position over time
             positions = np.array([
                 get_position(
                     t,
@@ -352,9 +431,49 @@ def generate_sound(definition_path: Path, lang:str="eng"):
             )
 
             # Add to corresponding channels
-            output[absolute_start:absolute_end, :4] += mixed
+            output[absolute_start:absolute_end, :4] += mixed"""
+            # Spatial position and attenuation
+            positions = np.array([
+                get_position(
+                    t,
+                    start,
+                    end,
+                    speed,
+                    movement_delay,
+                    orbit_mode,
+                    orbit_distance if orbit_mode else 0
+                )
+                for t in times
+            ])
 
-    # LFE remains silent
+            distances = np.linalg.norm(positions, axis=1)
+
+            attenuations = 1.0 / (
+                1.0 + (distances / DISTANCE_REFERENCE) ** 2
+            )
+
+            # Get speaker gains for each sample
+            speaker_gains = [
+                get_spatial_gains(position)
+                for position in positions
+            ]
+
+            # Convert gains into output channel order
+            gains = np.array([
+                [speaker_gains[i].get(channel, 0.0) for channel in channels]
+                for i in range(len(chunk))
+            ], dtype=np.float32)
+
+            # Mix audio into channels
+            mixed = (
+                chunk[:, None]
+                * gains
+                * attenuations[:, None]
+                * sound_volume
+                * master_volume
+            )
+
+            output[absolute_start:absolute_end] += mixed
 
     # Prevent clipping without distorting relative mix
     peak = np.max(np.abs(output))
@@ -420,7 +539,8 @@ def main(lang):
 
 
 if __name__ == "__main__":
-    doEng=False
+    doEng=True
+    #doEng=False
     if doEng:
         main(lang="eng")
     else:

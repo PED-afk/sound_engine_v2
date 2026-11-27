@@ -19,7 +19,7 @@
     ],
     "START":[100,80],
     "END":[-100,-80],
-    "SPEED":25,
+    "SPEED":20,
     "WAIT_BEFORE_MOVE":2.0,
     "VOLUME":1
 }
