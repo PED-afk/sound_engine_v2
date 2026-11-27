@@ -258,9 +258,9 @@ def generate_sound(definition_path: Path, lang:str="eng"):
         start = definition["START"]
         end = definition["END"]
         orbit_distance = None
-        master_volume = float(definition.get("VOLUME", 1.0))
-
-        sounds = definition.get("SOUNDS", [])
+    
+    master_volume = float(definition.get("VOLUME", 1.0))
+    sounds = definition.get("SOUNDS", [])
 
     # Load all source audio
     loaded_sounds = []

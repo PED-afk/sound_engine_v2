@@ -5,12 +5,13 @@ import pygame
 from pygame.locals import *
 
 class Display:
-    def __init__(self):
+    def __init__(self,size:list[int]=[800,600],frame:bool=False,sizable:bool=False,name:str="EMPTY"):
         pygame.init()
-        self.__defWindowSize=[800,600]
+        self.__defWindowSize=size
         self.__margins=[30,30]
 
-        self.__screen=pygame.display.set_mode(self.__defWindowSize,flags=(pygame.NOFRAME | pygame.RESIZABLE),vsync=1)
+        self.__screen=pygame.display.set_mode(self.__defWindowSize,flags=((0 if frame else pygame.NOFRAME) | (0 if sizable else pygame.RESIZABLE)),vsync=1)
+        pygame.display.set_caption(name)
         self.__pygameEvents=[]
 
         
@@ -46,7 +47,7 @@ class Display:
 
         alphas=[]
         if isinstance(text,dict):
-            alphas=list(text.items())
+            alphas=list(text.values())
             text=list(text.keys())
         else:
             for i in text:

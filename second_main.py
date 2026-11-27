@@ -5,19 +5,23 @@ import time
 from classes.display import Display
 
 
+UPDATE_INTERVAL=load_json("D:\\Python_Projects\\sound_engine_v2\\data\\u.json")["u"]
+UPDATE_INTERVAL_ERROR=UPDATE_INTERVAL/10
+
 def main():
-    if time.time()//1%2==1:
-        nextJsonUpdate=time.time()+1
-    else:
-        nextJsonUpdate=time.time()+2
     run=1
     subtitles={}
-    display=Display()
-    while run:
-        if nextJsonUpdate<time.time():
-            subtitles=load_json("D:\\Python_Projects\\sound_engine_v2\\data\\subtitles.json")
-            run=load_json("D:\\Python_Projects\\sound_engine_v2\\data\\run.json")["run"]
-            nextJsonUpdate=time.time()+1
+    display=Display(size=[1000,1000],frame=True,sizable=True,name="Subtitles")
+    while run==1:
+        if (time.time() - UPDATE_INTERVAL / 2) % UPDATE_INTERVAL <UPDATE_INTERVAL_ERROR:
+            try:
+                subtitles=load_json("D:\\Python_Projects\\sound_engine_v2\\data\\subtitles.json")
+            except Exception as e:
+                print("second can't read 1\nrace condition\n")
+            try:
+                run=load_json("D:\\Python_Projects\\sound_engine_v2\\data\\run.json")["run"]
+            except Exception as e:
+                print("second can't read 2\nrace condition\n")
         display.tick(subtitles)
 
 
